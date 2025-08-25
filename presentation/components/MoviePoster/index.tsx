@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Image, Pressable } from "react-native";
 
+import { router } from "expo-router";
 import { IMoviePosterProps } from "./Types";
 
 export const MoviePoster = ({
   poster,
   id,
-  smallPoster = false,className
+  smallPoster = false,
+  className,
 }: IMoviePosterProps) => {
+  const showDetails = useCallback(() => {
+    router.push(`/movie/${id}`);
+  }, [id]);
+
   return (
-    <Pressable className={`${className} active:opacity-90 px-2`}>
+    <Pressable
+      onPress={showDetails}
+      className={`${className} active:opacity-90 px-2`}
+    >
       <Image
         source={{ uri: poster }}
         className="shadow-lg rounded-2xl w-full h-full"

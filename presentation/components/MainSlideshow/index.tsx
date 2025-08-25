@@ -1,13 +1,11 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useWindowDimensions, View } from "react-native";
-import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
+import Carousel from "react-native-reanimated-carousel";
 
 import { MoviePoster } from "../MoviePoster";
 import { IMainSlideshowProps } from "./Types";
 
 export const MainSlideshow = ({ movies }: IMainSlideshowProps) => {
-  const ref = useRef<ICarouselInstance>(null);
-
   const width = useWindowDimensions().width;
   return (
     <View className="h-[250px] w-full">

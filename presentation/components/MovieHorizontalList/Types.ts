@@ -4,4 +4,5 @@ export interface IMovieHorizontalListProps {
   movies: Movie[];
   title?: string;
   className?: string;
+  loadNextPage?(): void;
 }

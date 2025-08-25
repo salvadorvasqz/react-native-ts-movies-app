@@ -9,7 +9,9 @@ const queryClient = new QueryClient();
 const RootLayout = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Stack screenOptions={{ headerShown: false }} />
+      <Stack
+        screenOptions={{ headerShown: false, animation: "slide_from_bottom" }}
+      />
     </QueryClientProvider>
   );
 };
